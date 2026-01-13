@@ -1,0 +1,272 @@
+<?php include 'data.php'; ?>
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><?php echo $profile['name']; ?> | Portfolio</title>
+    <meta name="description" content="Professional Portfolio of <?php echo $profile['name']; ?> - <?php echo $profile['title']; ?>">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        dark: '#0a0a0a',
+                        light: '#ffffff',
+                        accent: '#333333',
+                    },
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        ::selection {
+            background-color: #000;
+            color: #fff;
+        }
+        .glass {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .dark-glass {
+            background: rgba(10, 10, 10, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .custom-cursor {
+            width: 20px;
+            height: 20px;
+            border: 1px solid #000;
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            transition: transform 0.1s ease;
+        }
+        @media (max-width: 768px) {
+            .custom-cursor { display: none; }
+        }
+    </style>
+</head>
+<body class="bg-white text-dark font-sans selection:bg-dark selection:text-white">
+    <!-- Custom Cursor -->
+    <div id="cursor" class="custom-cursor"></div>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 glass py-6">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold tracking-tighter uppercase">BW.</a>
+            <div class="hidden md:flex space-x-12 text-sm font-medium tracking-widest uppercase">
+                <a href="#home" class="hover:text-gray-400 transition-colors">Home</a>
+                <a href="#about" class="hover:text-gray-400 transition-colors">About</a>
+                <a href="#portfolio" class="hover:text-gray-400 transition-colors">Portfolio</a>
+                <a href="#contact" class="hover:text-gray-400 transition-colors">Contact</a>
+            </div>
+            <button class="md:hidden">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center pt-20 overflow-hidden">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl">
+                <h2 class="text-lg md:text-xl font-light mb-6 tracking-[0.2em] uppercase" data-aos="fade-up">Hello, I am</h2>
+                <h1 class="text-6xl md:text-9xl font-bold mb-8 leading-tight tracking-tighter" data-aos="fade-up" data-aos-delay="200">
+                    <?php echo $profile['name']; ?>
+                </h1>
+                <p class="text-xl md:text-2xl text-gray-500 font-light mb-12 max-w-2xl leading-relaxed" data-aos="fade-up" data-aos-delay="400">
+                    <?php echo $profile['title']; ?> based in <?php echo $profile['location']; ?>. Specialized in crafting minimal & high-end digital experiences.
+                </p>
+                <div class="flex space-x-8 items-center" data-aos="fade-up" data-aos-delay="600">
+                    <a href="#portfolio" class="bg-dark text-white px-10 py-4 text-sm font-medium tracking-widest uppercase hover:bg-gray-800 transition-all">View Works</a>
+                    <a href="#contact" class="border-b border-dark text-sm font-medium tracking-widest uppercase pb-1 hover:text-gray-400 hover:border-gray-400 transition-all">Contact Me</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-32 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-20 items-center">
+                <div data-aos="fade-right">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1587&auto=format&fit=crop" alt="Bagus Wigna" class="w-full grayscale hover:grayscale-0 transition-all duration-700">
+                        <div class="absolute -bottom-10 -right-10 w-64 h-64 border-8 border-white -z-10 hidden md:block"></div>
+                    </div>
+                </div>
+                <div data-aos="fade-left">
+                    <h3 class="text-sm font-bold tracking-[0.3em] uppercase mb-8 text-gray-400 underline decoration-gray-300 underline-offset-8">About Me</h3>
+                    <h2 class="text-4xl md:text-5xl font-bold mb-8 tracking-tight">Crafting soulful code for the modern web.</h2>
+                    <p class="text-lg text-gray-600 leading-relaxed mb-10">
+                        <?php echo $profile['about']; ?>
+                    </p>
+                    
+                    <div class="grid grid-cols-2 gap-8">
+                        <?php foreach($skills as $category => $skillList): ?>
+                        <div>
+                            <h4 class="font-bold text-sm uppercase tracking-widest mb-4"><?php echo $category; ?></h4>
+                            <ul class="text-gray-500 text-sm space-y-2">
+                                <?php foreach($skillList as $skill): ?>
+                                <li><?php echo $skill; ?></li>
+                                <?php endforeach; ?>
+                            </ul>
+                        </div>
+                        <?php endforeach; ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Section -->
+    <section id="portfolio" class="py-32">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
+                <div>
+                    <h3 class="text-sm font-bold tracking-[0.3em] uppercase mb-6 text-gray-400">Selected Works</h3>
+                    <h2 class="text-5xl font-bold tracking-tighter">Case Studies</h2>
+                </div>
+                <a href="#" class="text-sm font-bold tracking-widest uppercase border-b border-dark pb-1">View All Projects</a>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-16">
+                <?php foreach($projects as $index => $project): ?>
+                <div class="group cursor-pointer" data-aos="fade-up" data-aos-delay="<?php echo $index * 100; ?>">
+                    <div class="overflow-hidden mb-8 relative">
+                        <img src="<?php echo $project['image']; ?>" alt="<?php echo $project['title']; ?>" class="w-full h-[500px] object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700">
+                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
+                            <span class="text-white text-sm font-bold tracking-widest uppercase border-2 border-white px-8 py-3">View Details</span>
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <p class="text-xs text-gray-400 uppercase tracking-widest mb-2"><?php echo $project['category']; ?></p>
+                            <h3 class="text-2xl font-bold group-hover:underline decoration-1 underline-offset-8"><?php echo $project['title']; ?></h3>
+                        </div>
+                        <i data-lucide="arrow-up-right" class="text-gray-300 group-hover:text-dark transition-colors"></i>
+                    </div>
+                </div>
+                <?php endforeach; ?>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="py-32 bg-dark text-white">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-20">
+                <div class="md:col-span-1" data-aos="fade-up">
+                    <h3 class="text-sm font-bold tracking-[0.3em] uppercase mb-8 text-gray-500">Experience</h3>
+                    <h2 class="text-4xl font-bold tracking-tight">Professional Journey</h2>
+                </div>
+                <div class="md:col-span-2 space-y-16">
+                    <?php foreach($experience as $exp): ?>
+                    <div class="border-b border-white/10 pb-12 group" data-aos="fade-up">
+                        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
+                            <h3 class="text-2xl font-bold group-hover:text-gray-400 transition-colors"><?php echo $exp['role']; ?></h3>
+                            <span class="text-sm tracking-widest uppercase text-gray-400"><?php echo $exp['period']; ?></span>
+                        </div>
+                        <p class="text-lg text-gray-500 font-light mb-4"><?php echo $exp['company']; ?></p>
+                        <p class="text-gray-400 leading-relaxed max-w-2xl">
+                            <?php echo $exp['description']; ?>
+                        </p>
+                    </div>
+                    <?php endforeach; ?>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-32">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto text-center" data-aos="zoom-in">
+                <h3 class="text-sm font-bold tracking-[0.3em] uppercase mb-8 text-gray-400">Get in touch</h3>
+                <h2 class="text-5xl md:text-7xl font-bold tracking-tighter mb-12">Let's build something beautiful together.</h2>
+                <a href="mailto:<?php echo $profile['email']; ?>" class="text-3xl md:text-5xl font-light border-b-2 border-dark pb-4 hover:text-gray-400 hover:border-gray-400 transition-all break-all">
+                    <?php echo $profile['email']; ?>
+                </a>
+                
+                <div class="mt-20 flex justify-center space-x-12">
+                    <?php foreach($profile['socials'] as $name => $url): ?>
+                    <a href="<?php echo $url; ?>" target="_blank" class="text-sm font-bold tracking-widest uppercase hover:text-gray-400 transition-colors">
+                        <?php echo $name; ?>
+                    </a>
+                    <?php endforeach; ?>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 border-t border-gray-100">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
+            <p class="text-sm text-gray-400">&copy; <?php echo date('Y'); ?> Bagus Wigna. All Rights Reserved.</p>
+            <div class="flex space-x-8 items-center">
+                <span class="text-xs uppercase tracking-widest text-gray-400">Back to top</span>
+                <a href="#home" class="w-10 h-10 border border-gray-200 flex items-center justify-center hover:bg-dark hover:text-white transition-all">
+                    <i data-lucide="arrow-up" class="w-4 h-4"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Custom Cursor
+        const cursor = document.getElementById('cursor');
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.transform = `translate(${e.clientX - 10}px, ${e.clientY - 10}px)`;
+        });
+
+        document.querySelectorAll('a, button').forEach(el => {
+            el.addEventListener('mouseenter', () => cursor.style.transform += ' scale(2)');
+            el.addEventListener('mouseleave', () => cursor.style.transform = cursor.style.transform.replace(' scale(2)', ''));
+        });
+
+        // Smooth Scroll Fix for Safari/Other
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
