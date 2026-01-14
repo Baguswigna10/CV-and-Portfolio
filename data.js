@@ -14,9 +14,18 @@ const profile = {
 
 const skills = {
     'Design': ['Figma', 'Adobe XD', 'Photoshop', 'Illustrator', 'Canva'],
-    'Social Media': ['Content Strategy', 'Graphic Design', 'Copywriting', 'Analytics'],
-    'Frontend': ['HTML5', 'CSS3/Tailwind', 'JavaScript', 'React']
+    'Skills': ['Content Strategy', 'Social Media Designer', 'Logo Designer', 'Copywriting'],
+    'Frontend': ['HTML', 'CSS3/Tailwind', 'JavaScript']
 };
+
+const education = [
+    {
+        school: 'Institute Technology of National Bandung',
+        degree: 'Majoring in Informatics',
+        period: '2023 - Present',
+        description: 'Focusing on UI/UX Design and Frontend Development.'
+    }
+];
 
 const experience = [
     {
@@ -28,7 +37,7 @@ const experience = [
     {
         role: 'UI/UX & Web Designer',
         company: 'Digital Creative Agency',
-        period: '2019 - 2021',
+        period: '2021 - Present',
         description: 'Designed user-friendly interfaces and implemented responsive web designs using modern frontend technologies.'
     }
 ];
@@ -37,13 +46,13 @@ const projects = [
     {
         title: 'E-Commerce Platform',
         category: 'UI/UX Design',
-        image: 'https://images.unsplash.com/photo-1557821552-17105176677c?q=80&w=1632&auto=format&fit=crop',
+        image: '',
         description: 'A full-featured online store design with focus on user conversion.'
     },
     {
         title: 'Creative Portfolio',
         category: 'Web Design',
-        image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1626&auto=format&fit=crop',
+        image: '',
         description: 'Minimalist portfolio design for a photography agency.'
     }
 ];

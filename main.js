@@ -32,9 +32,16 @@ document.addEventListener('DOMContentLoaded', () => {
         div.className = 'group cursor-pointer';
         div.setAttribute('data-aos', 'fade-up');
         div.setAttribute('data-aos-delay', index * 100);
+
+        const imageHtml = project.image
+            ? `<img src="${project.image}" alt="${project.title}" class="w-full h-[500px] object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700">`
+            : `<div class="w-full h-[500px] bg-dark/5 flex items-center justify-center group-hover:bg-dark/10 transition-colors duration-700">
+                <span class="text-gray-300 font-bold tracking-widest uppercase">Ongoing project</span>
+               </div>`;
+
         div.innerHTML = `
             <div class="overflow-hidden mb-8 relative">
-                <img src="${project.image}" alt="${project.title}" class="w-full h-[500px] object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700">
+                ${imageHtml}
                 <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
                     <span class="text-white text-sm font-bold tracking-widest uppercase border-2 border-white px-8 py-3">View Details</span>
                 </div>
@@ -65,6 +72,23 @@ document.addEventListener('DOMContentLoaded', () => {
             <p class="text-gray-400 leading-relaxed max-w-2xl">${exp.description}</p>
         `;
         experienceContainer.appendChild(div);
+    });
+
+    // Populate Education
+    const educationContainer = document.getElementById('education-container');
+    education.forEach(edu => {
+        const div = document.createElement('div');
+        div.className = 'border-b border-white/10 pb-12 group';
+        div.setAttribute('data-aos', 'fade-up');
+        div.innerHTML = `
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
+                <h3 class="text-2xl font-bold group-hover:text-gray-400 transition-colors">${edu.school}</h3>
+                <span class="text-sm tracking-widest uppercase text-gray-400">${edu.period}</span>
+            </div>
+            <p class="text-lg text-gray-500 font-light mb-4">${edu.degree}</p>
+            <p class="text-gray-400 leading-relaxed max-w-2xl">${edu.description}</p>
+        `;
+        educationContainer.appendChild(div);
     });
 
     // Populate Socials
