@@ -8,7 +8,7 @@ const profile = {
     socials: {
         github: 'https://github.com/Baguswigna10',
         linkedin: 'https://linkedin.com',
-        instagram: 'https://www.instagram.com/baguswii_'
+        instagram: 'https://www.instagram.com/fuse.std'
     }
 };
 
@@ -20,9 +20,9 @@ const skills = {
 
 const experience = [
     {
-        role: 'Senior Web Developer',
-        company: 'Tech Creative Studio',
-        period: '2021 - Present',
+        role: 'Freelance Graphic Designer',
+        company: 'Fuse Studio',
+        period: '2019 - Present',
         description: 'Leading the development team in building high-performance web applications and mentoring junior developers.'
     },
     {
@@ -45,12 +45,6 @@ const projects = [
         category: 'UI/UX Design',
         image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1626&auto=format&fit=crop',
         description: 'Minimalist portfolio design for a photography agency.'
-    },
-    {
-        title: 'Task Management App',
-        category: 'App Development',
-        image: 'https://images.unsplash.com/photo-1540350394557-8d14678e7f91?q=80&w=1632&auto=format&fit=crop',
-        description: 'Productivity tool for small teams to manage workflows.'
     }
 ];
 
