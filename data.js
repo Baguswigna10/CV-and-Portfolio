@@ -54,4 +54,3 @@ const projects = [
     }
 ];
 
-export { profile, skills, experience, projects };

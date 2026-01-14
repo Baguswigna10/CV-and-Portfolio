@@ -1,5 +1,3 @@
-import { profile, skills, experience, projects } from './data.js';
-
 document.addEventListener('DOMContentLoaded', () => {
     // Populate Profile Data
     document.getElementById('page-title').textContent = `${profile.name} | Portfolio`;
