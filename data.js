@@ -1,10 +1,10 @@
 const profile = {
     name: 'Bagus Wiguna',
-    title: 'Fullstack Developer & UI/UX Designer',
+    title: 'UI/UX Designer & Social Media Specialist',
     email: 'hello@baguswiguna.com',
     phone: '+62 812 3456 7890',
     location: 'Bandung, Jawa Barat',
-    about: 'I am a passionate developer with over 5 years of experience in creating beautiful, functional, and user-centered digital experiences. I specialize in bridging the gap between design and code.',
+    about: 'I am a creative designer focused on crafting visually stunning and user-centered digital experiences. I specialize in UI/UX design, social media branding, and modern frontend implementation.',
     socials: {
         github: 'https://github.com/Baguswigna10',
         linkedin: 'https://linkedin.com',
@@ -13,9 +13,9 @@ const profile = {
 };
 
 const skills = {
-    'Frontend': ['HTML5', 'CSS3/Tailwind', 'JavaScript', 'React', 'Vue'],
-    'Backend': ['PHP Native', 'Laravel', 'Node.js', 'MySQL', 'PostgreSQL'],
-    'Design': ['Figma', 'Adobe XD', 'Photoshop', 'Illustrator']
+    'Design': ['Figma', 'Adobe XD', 'Photoshop', 'Illustrator', 'Canva'],
+    'Social Media': ['Content Strategy', 'Graphic Design', 'Copywriting', 'Analytics'],
+    'Frontend': ['HTML5', 'CSS3/Tailwind', 'JavaScript', 'React']
 };
 
 const experience = [
@@ -23,28 +23,27 @@ const experience = [
         role: 'Freelance Graphic Designer',
         company: 'Fuse Studio',
         period: '2019 - Present',
-        description: 'Leading the development team in building high-performance web applications and mentoring junior developers.'
+        description: 'Creating engaging visual content and social media strategies for various brands, focusing on brand identity and audience growth.'
     },
     {
-        role: 'Web Developer',
-        company: 'Digital Agency',
+        role: 'UI/UX & Web Designer',
+        company: 'Digital Creative Agency',
         period: '2019 - 2021',
-        description: 'Developed custom WordPress themes and specialized in responsive frontend implementation.'
+        description: 'Designed user-friendly interfaces and implemented responsive web designs using modern frontend technologies.'
     }
 ];
 
 const projects = [
     {
         title: 'E-Commerce Platform',
-        category: 'Web Development',
+        category: 'UI/UX Design',
         image: 'https://images.unsplash.com/photo-1557821552-17105176677c?q=80&w=1632&auto=format&fit=crop',
-        description: 'A full-featured online store with payment integration.'
+        description: 'A full-featured online store design with focus on user conversion.'
     },
     {
         title: 'Creative Portfolio',
-        category: 'UI/UX Design',
+        category: 'Web Design',
         image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1626&auto=format&fit=crop',
         description: 'Minimalist portfolio design for a photography agency.'
     }
 ];
-
