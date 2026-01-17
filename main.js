@@ -12,6 +12,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.getElementById('footer-copyright').textContent = `© ${new Date().getFullYear()} ${profile.name}. All Rights Reserved.`;
 
+    // Set Download Links
+    const cvLink = profile.cv || '#';
+    const portfolioLink = profile.portfolio || '#';
+
+    document.getElementById('hero-cv').href = cvLink;
+    document.getElementById('hero-portfolio').href = portfolioLink;
+
     // Populate Skills
     const skillsContainer = document.getElementById('skills-container');
     Object.entries(skills).forEach(([category, list]) => {

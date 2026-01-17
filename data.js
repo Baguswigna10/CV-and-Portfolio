@@ -9,7 +9,9 @@ const profile = {
         github: 'https://github.com/Baguswigna10',
         linkedin: 'https://linkedin.com',
         instagram: 'https://www.instagram.com/fuse.std'
-    }
+    },
+    cv: 'assets/pdf/cv-baguswiguna.pdf',
+    portfolio: 'assets/pdf/portfolio-baguswiguna.pdf'
 };
 
 const skills = {
@@ -35,9 +37,9 @@ const experience = [
         description: 'Creating engaging visual content and social media strategies for various brands, focusing on brand identity and audience growth.'
     },
     {
-        role: 'UI/UX & Web Designer',
-        company: 'Digital Creative Agency',
-        period: '2021 - Present',
+        role: 'Social Media & Web Designer',
+        company: 'Cerita Sketsa Studio',
+        period: '2022 - Present',
         description: 'Designed user-friendly interfaces and implemented responsive web designs using modern frontend technologies.'
     }
 ];

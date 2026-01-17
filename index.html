@@ -74,6 +74,67 @@
                 display: none;
             }
         }
+
+        @media print {
+
+            .no-print,
+            nav,
+            footer,
+            #cursor,
+            .custom-cursor,
+            button,
+            .flex-col.sm\:flex-row.gap-6 {
+                display: none !important;
+            }
+
+            body {
+                background: white !important;
+                color: black !important;
+                padding: 0 !important;
+                margin: 0 !important;
+            }
+
+            section {
+                padding: 20px 0 !important;
+                page-break-inside: avoid;
+            }
+
+            #home {
+                min-height: auto !important;
+                padding-top: 50px !important;
+            }
+
+            #about img {
+                display: none;
+            }
+
+            .grid {
+                display: block !important;
+            }
+
+            .grid>div {
+                margin-bottom: 20px;
+            }
+
+            .text-6xl,
+            .text-9xl {
+                font-size: 3rem !important;
+            }
+
+            .bg-dark {
+                background: white !important;
+                color: black !important;
+                border-bottom: 1px solid #eee;
+            }
+
+            .text-white {
+                color: black !important;
+            }
+
+            .border-white\/10 {
+                border-color: #eee !important;
+            }
+        }
     </style>
 </head>
 
@@ -112,13 +173,22 @@
                     data-aos="fade-up" data-aos-delay="400">
                     <!-- JS Injected -->
                 </p>
-                <div class="flex space-x-8 items-center" data-aos="fade-up" data-aos-delay="600">
+                <div class="flex flex-col sm:flex-row gap-6 sm:items-center" data-aos="fade-up" data-aos-delay="600">
                     <a href="#portfolio"
-                        class="bg-dark text-white px-10 py-4 text-sm font-medium tracking-widest uppercase hover:bg-gray-800 transition-all">View
+                        class="bg-dark text-white px-10 py-4 text-sm font-medium tracking-widest uppercase hover:bg-gray-800 transition-all text-center">View
                         Works</a>
-                    <a href="#contact"
-                        class="border-b border-dark text-sm font-medium tracking-widest uppercase pb-1 hover:text-gray-400 hover:border-gray-400 transition-all">Contact
-                        Me</a>
+                    <div class="flex items-center space-x-8">
+                        <a id="hero-cv" href="#" target="_blank"
+                            class="flex items-center gap-2 border-b border-dark text-sm font-medium tracking-widest uppercase pb-1 hover:text-gray-400 hover:border-gray-400 transition-all">
+                            <i data-lucide="file-text" class="w-4 h-4"></i>
+                            Download CV
+                        </a>
+                        <a id="hero-portfolio" href="#" target="_blank"
+                            class="flex items-center gap-2 border-b border-dark text-sm font-medium tracking-widest uppercase pb-1 hover:text-gray-400 hover:border-gray-400 transition-all">
+                            <i data-lucide="briefcase" class="w-4 h-4"></i>
+                            Portfolio
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
